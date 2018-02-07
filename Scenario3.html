@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+	<ul id="ul">
+		<li>356671</li>
+		<li>323647</li>
+		<li>392075</li>
+		<li>323093</li>
+		<li>781010</li>
+		<li>323313</li>
+		<li>380901</li>
+		<li>901910</li>
+		<li>702020</li>
+		<li>323625</li>
+
+	</ul>
+	<script>
+		var uL = document.getElementById("ul");
+		var listItem = uL.getElementsByTagName("li");
+		var newNums = [];
+		for (var i = 0; i < listItem.length; i++) {
+			newNums.push(parseInt(listItem[i].innerHTML));
+			var no = newNums[i].toString();
+			if (no.search("5") != -1) {
+				document.getElementsByTagName("li")[i].setAttribute("id", no);
+				highlight(listItem[i].id, 'blue');
+			}
+		}
+		function highlight(name, color) {
+			var a = document.getElementById(name);
+			a.style.color = "blue";
+		}
+	</script>
+</body>
+</html>
